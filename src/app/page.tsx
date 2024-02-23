@@ -10,9 +10,10 @@ export default function Home() {
     <div>
       <div className="hero">
         <div>
-          <p>Frontend <br/> Developer</p>
+          <p className="md:animate-appearLeft">Frontend</p> 
+          <p className="md:animate-appearLeft md:delay-100">Developer</p>
         </div>
-        <div>
+        <div className="md:animate-appearRight">
           <div className="image">
             <Image
               fill

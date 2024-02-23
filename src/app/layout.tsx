@@ -8,7 +8,7 @@ import { ScrollToTop } from '../components/ui/ScrollToTop';
 const nunito = Nunito({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'My website',
+  title: 'Glenn Vockings',
   description: 'Glenn Portfolio',
 }
 

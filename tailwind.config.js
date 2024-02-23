@@ -66,6 +66,20 @@ module.exports = {
           foreground: "var(--popover-foreground)",
         },
       },
+      keyframes: {
+        appearLeft: {
+          "0%": { opacity: 0, transform: "translateX(-10px)" },
+          "100%": { opacity: 1, transform: "translateX(0)" },
+        },
+        appearRight: {
+          "0%": { opacity: 0, transform: "translateX(10px)" },
+          "100%": { opacity: 1, transform: "translateX(0)" },
+        },
+      },
+      animation: {
+        appearLeft: "appearLeft 1s ease-in-out",
+        appearRight: "appearRight 1s ease-in-out",
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],

@@ -14,9 +14,9 @@ export const Header = () => {
         </div>
 
         <div className="links">
-          <Link href='/#about'>About</Link>
-          <Link href='/#experience'>Experience</Link>
-          <Link href='/#projects'>Projects</Link>
+          <Link href='/#about' className='md:animate-appearLeft'>About</Link>
+          <Link href='/#experience' className='md:animate-appearLeft'>Experience</Link>
+          <Link href='/#projects' className='md:animate-appearLeft'>Projects</Link>
         </div>
       </nav>
     </div>

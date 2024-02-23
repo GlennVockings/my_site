@@ -1,5 +1,6 @@
 "use client"
 
+import { cn } from "@/lib/utils"
 import { useState } from "react"
 
 type Experience = {
@@ -43,14 +44,20 @@ export const Experience= () => {
       <p className="heading-title">Experience</p>
 
       <div className="flex flex-col md:flex-row border-2 border-accent md:divide-x-2 divide-accent">
-        <ul className="flex flex-row md:w-1/3 md:flex-col overflow-x-scroll md:overflow-auto">
+        <ul className="flex flex-row snap-x md:w-1/3 md:flex-col overflow-x-scroll md:overflow-auto">
           {
             experiences.map((experience, index) => {
               const { role, company, start, end } = experience
               return (
                 <li 
                   key={company} 
-                  className="max-h-16 w-full px-2 py-2 cursor-pointer border-b-2 border-accent border-r-2 md:border-r-0 hover:bg-accent hover:text-accent-foreground"
+                  className={
+                    cn("max-h-16 w-full snap-start px-2 py-2 cursor-pointer border-b-2 border-accent border-r-2 md:border-r-0 hover:bg-accent hover:text-accent-foreground",
+                      {
+                        "bg-accent text-accent-foreground" : active === index
+                      }
+                    )
+                  }
                   onClick={() => setActive(index)}
                 >
                   <div className="whitespace-nowrap">
