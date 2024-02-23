@@ -1,15 +1,17 @@
-import { Card } from "./ui/Card"
-import oxted from "../app/images/oxted.png"
-import { StaticImageData } from "next/image"
+import { Card } from "./ui/Card";
+import oxted from "../app/images/oxted.png";
+import { StaticImageData } from "next/image";
+import { SiMongodb, SiGraphql, SiTailwindcss, SiNextdotjs, SiExpress, SiPayloadcms, SiRedux } from "react-icons/si";
+import { FaReact } from "react-icons/fa6";
 
 type Projects = {
-  name: string,
-  desc: string,
-  image: StaticImageData,
-  built: string[],
-  github: string,
-  link: string
-}
+  name: string;
+  desc: string;
+  image: StaticImageData;
+  built: string[];
+  github: string;
+  link: string;
+};
 
 const projects : Projects[] = [
   {
@@ -20,7 +22,7 @@ const projects : Projects[] = [
       "React",
       "Tailwind CSS",
       "MongoDB",
-      "GraphQL"
+      "GraphQL",
     ],
     github: "https://github.com/GlennVockings/new_website",
     link: "https://oxtedfc.onrender.com"
@@ -28,6 +30,32 @@ const projects : Projects[] = [
 ]
 
 export const Projects = () => {
+
+  const iconSelctor = ( name: string ) => {
+    switch( name.toLowerCase() ) {
+      case 'react':
+        return <FaReact />
+      case 'tailwind css':
+        return <SiTailwindcss />
+      case 'mongodb':
+        return <SiMongodb />
+      case 'graphql':
+        return <SiGraphql />
+      case 'nextjs':
+        return <SiNextdotjs />
+      case 'payload cms':
+        return <SiPayloadcms />
+      case 'express':
+        return <SiExpress />
+      case 'redux':
+        return <SiRedux />
+      default:
+        return null;
+    }
+  }
+
+
+
   return (
     <div id="projects" className='widget'>
       <p className="heading-title animate-appearLeft">Projects</p>
@@ -35,7 +63,9 @@ export const Projects = () => {
       <div className="wrapper wrapper-3">
         {
           projects.map(project => {
-            return <Card key={project.name} {...project} />
+            const icons = project.built.map(tech => iconSelctor(tech))
+            console.log( icons )
+            return <Card key={project.name} icons={icons} {...project} />
           })
         }
       </div>
