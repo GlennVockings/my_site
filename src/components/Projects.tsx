@@ -1,5 +1,6 @@
 import { Card } from "./ui/Card";
 import oxted from "../app/images/oxted.png";
+import shop from "../app/images/shop.png";
 import { StaticImageData } from "next/image";
 import { SiMongodb, SiGraphql, SiTailwindcss, SiNextdotjs, SiExpress, SiPayloadcms, SiRedux } from "react-icons/si";
 import { FaReact } from "react-icons/fa6";
@@ -26,6 +27,19 @@ const projects : Projects[] = [
     ],
     github: "https://github.com/GlennVockings/new_website",
     link: "https://oxtedfc.onrender.com"
+  },
+  {
+    name: "Shop",
+    desc: "",
+    image: shop,
+    built: [
+      "Nextjs",
+      "Tailwind CSS",
+      "MongoDB",
+      "Payload CMS",
+    ],
+    github: "",
+    link: ""
   }
 ]
 
@@ -64,7 +78,6 @@ export const Projects = () => {
         {
           projects.map(project => {
             const icons = project.built.map(tech => iconSelctor(tech))
-            console.log( icons )
             return <Card key={project.name} icons={icons} {...project} />
           })
         }

@@ -52,14 +52,23 @@ export const Card = ({ name, desc, image, built, github, link, icons }: Card) =>
         </div>
       </div>
       <div className='wrapper wrapper-2'>
-        <a href={ github } target="_blank" className='link'>
-          <SiGithub />
-          Github
-        </a>
-        <a href={ link } className='link'>
-          View site
-          <FaChevronRight />
-        </a>
+        {
+          github !== "" ? (
+            <a href={ github } target="_blank" className='link'>
+              <SiGithub />
+              Github
+            </a>
+          ) : ''
+        }
+        {
+          link !== "" ?
+          (
+            <a href={ link } className='link'>
+              View site
+              <FaChevronRight />
+            </a>
+          ) : ''
+        }
       </div>
     </div>
   )
