@@ -1,6 +1,7 @@
 import { Card } from "./ui/Card";
 import oxted from "../app/images/oxted.png";
 import shop from "../app/images/shop.png";
+import league from "../app/images/mid-sussex-league.png";
 import { StaticImageData } from "next/image";
 import { SiMongodb, SiGraphql, SiTailwindcss, SiNextdotjs, SiExpress, SiPayloadcms, SiRedux } from "react-icons/si";
 import { FaReact } from "react-icons/fa6";
@@ -37,6 +38,18 @@ const projects : Projects[] = [
       "Tailwind CSS",
       "MongoDB",
       "Payload CMS",
+    ],
+    github: "",
+    link: ""
+  },
+  {
+    name: "Mid Sussex League [WIP]",
+    desc: "",
+    image: league,
+    built: [
+      "Nextjs",
+      "Tailwind CSS",
+      "Typescript"
     ],
     github: "",
     link: ""
